@@ -16,10 +16,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const issue = context.payload.issue || context.payload.pull_request;
-            const projectUrl = 'https://github.com/users/Riaankl/projects/1';
+            const projectUrl = 'https://github.com/orgs/cncf/projects/25/';
 
             const projectId = projectUrl.split('/').pop();
-            const columnName = 'ToDo'; // Replace with the name of the column in the project board
+            const columnName = 'New'; // Replace with the name of the column in the project board
 
             const { data: column } = await github.projects.listColumns({
               project_id: projectId
